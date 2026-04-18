@@ -124,51 +124,10 @@
   .btn-group .btn-option:active {
     transform: scale(0.96);
   }
-  /* Multi-select uses a different accent */
   .btn-group.multi .btn-option.active {
     border-color: #ffaa00;
     background: #ffaa0022;
     color: #ffaa00;
-  }
-
-  /* Toggle switches for quality flags */
-  .flag-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #1e1e3a;
-  }
-  .flag-row:last-child { border-bottom: none; }
-  .flag-row .flag-label { font-size: 14px; color: #ccc; }
-  .flag-toggle {
-    width: 50px; height: 28px;
-    border-radius: 14px;
-    background: #2a2a4a;
-    border: none;
-    position: relative;
-    cursor: pointer;
-    transition: background 0.2s;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .flag-toggle::after {
-    content: '';
-    position: absolute;
-    top: 3px; left: 3px;
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: #888;
-    transition: all 0.2s;
-  }
-  .flag-toggle.on { background: #00d4aa33; }
-  .flag-toggle.on::after {
-    left: 25px;
-    background: #00d4aa;
-  }
-  .flag-toggle.on-warn { background: #ff444433; }
-  .flag-toggle.on-warn::after {
-    left: 25px;
-    background: #ff4444;
   }
 
   .submit-btn {
@@ -392,12 +351,10 @@
     <div class="btn-option" data-value="front">Front</div>
     <div class="btn-option" data-value="front_45L">45° L</div>
     <div class="btn-option" data-value="front_45R">45° R</div>
-    <div class="btn-option" data-value="lateral_90L">90° L</div>
-    <div class="btn-option" data-value="lateral_90R">90° R</div>
   </div>
   <div class="btn-group" data-field="angle_label" style="margin-top:6px;">
-    <div class="btn-option" data-value="rear_135L">135° L</div>
-    <div class="btn-option" data-value="rear_135R">135° R</div>
+    <div class="btn-option" data-value="lateral_90L">90° L</div>
+    <div class="btn-option" data-value="lateral_90R">90° R</div>
     <div class="btn-option" data-value="rear">Rear</div>
   </div>
 </div>
@@ -416,11 +373,11 @@
 </div>
 
 <div class="form-section">
-  <h3>📷 Camera Height</h3>
-  <div class="btn-group" data-field="camera_height">
-    <div class="btn-option" data-value="low">⬇️ Low</div>
-    <div class="btn-option" data-value="eye_level">👁️ Eye Level</div>
-    <div class="btn-option" data-value="elevated">⬆️ Elevated</div>
+  <h3>📷 Camera Pitch</h3>
+  <div class="btn-group" data-field="camera_pitch">
+    <div class="btn-option" data-value="upward">⬆️ Upward</div>
+    <div class="btn-option" data-value="level">➡️ Level</div>
+    <div class="btn-option" data-value="downward">⬇️ Downward</div>
   </div>
 </div>
 
@@ -441,7 +398,6 @@
     <div class="btn-option" data-value="morning">🌅 Morning</div>
     <div class="btn-option" data-value="midday">☀️ Midday</div>
     <div class="btn-option" data-value="evening">🌇 Evening</div>
-    <div class="btn-option" data-value="night">🌙 Night</div>
   </div>
 </div>
 
@@ -452,25 +408,6 @@
     <div class="btn-option" data-value="overcast">☁️ Overcast</div>
     <div class="btn-option" data-value="rainy">🌧️ Rainy</div>
     <div class="btn-option" data-value="foggy">🌫️ Foggy</div>
-  </div>
-</div>
-
-<div class="form-section">
-  <h3>🔆 Sun Direction</h3>
-  <div class="btn-group" data-field="sun_direction">
-    <div class="btn-option" data-value="front_lit">Front-lit</div>
-    <div class="btn-option" data-value="back_lit">Back-lit</div>
-    <div class="btn-option" data-value="side_lit">Side-lit</div>
-    <div class="btn-option" data-value="diffuse">Diffuse</div>
-  </div>
-</div>
-
-<div class="form-section">
-  <h3>🌑 Shadow Severity</h3>
-  <div class="btn-group" data-field="shadow_severity">
-    <div class="btn-option" data-value="none">None</div>
-    <div class="btn-option" data-value="mild">Mild</div>
-    <div class="btn-option" data-value="heavy">Heavy</div>
   </div>
 </div>
 
@@ -510,27 +447,6 @@
   </div>
 </div>
 
-<!-- ═══════ QUALITY FLAGS ═══════ -->
-<div class="form-section">
-  <h3>🚩 Quality Flags</h3>
-  <div class="flag-row">
-    <span class="flag-label">📷 Motion Blur</span>
-    <button class="flag-toggle" id="flag_motion_blur" onclick="toggleFlag(this)"></button>
-  </div>
-  <div class="flag-row">
-    <span class="flag-label">☀️ Lens Flare</span>
-    <button class="flag-toggle" id="flag_lens_flare" onclick="toggleFlag(this)"></button>
-  </div>
-  <div class="flag-row">
-    <span class="flag-label">✨ Glare / Reflection</span>
-    <button class="flag-toggle" id="flag_glare_reflection" onclick="toggleFlag(this)"></button>
-  </div>
-  <div class="flag-row">
-    <span class="flag-label">✅ Usable</span>
-    <button class="flag-toggle on" id="flag_usable" onclick="toggleFlagUsable(this)"></button>
-  </div>
-</div>
-
 <!-- ═══════ NOTES ═══════ -->
 <div class="form-section">
   <h3>📝 Notes (optional)</h3>
@@ -566,9 +482,6 @@
 </div>
 
 <script>
-// ══════════════════════════════════
-//  LANDMARK METADATA
-// ══════════════════════════════════
 const LANDMARKS = {
   LM01:{name:"Beethoven Statue",cat:"statue"},
   LM02:{name:"Gutenberg Monument",cat:"statue"},
@@ -600,25 +513,17 @@ const LANDMARKS = {
 const ANGLE_DEGREES = {
   front:0, front_45L:45, front_45R:45,
   lateral_90L:90, lateral_90R:90,
-  rear_135L:135, rear_135R:135, rear:180
+  rear:180
 };
 
-// ══════════════════════════════════
-//  STATE
-// ══════════════════════════════════
 let entries = JSON.parse(localStorage.getItem('captureLog2') || '[]');
-let selectedValues = {};     // single-select fields
-let multiValues = {};        // multi-select fields: field -> Set
-let editingIndex = -1;       // -1 = new entry mode
+let selectedValues = {};
+let multiValues = {};
+let editingIndex = -1;
 
 updateCounter();
 showLastEntry();
 
-// ══════════════════════════════════
-//  BUTTON GROUP LOGIC
-// ══════════════════════════════════
-
-// Collect all angle_label groups so single-select spans both rows
 const fieldGroups = {};
 document.querySelectorAll('.btn-group').forEach(group => {
   const field = group.dataset.field;
@@ -629,7 +534,6 @@ document.querySelectorAll('.btn-group').forEach(group => {
   group.querySelectorAll('.btn-option').forEach(btn => {
     btn.addEventListener('click', () => {
       if (isMulti) {
-        // Multi-select toggle
         btn.classList.toggle('active');
         if (!multiValues[field]) multiValues[field] = new Set();
         if (btn.classList.contains('active')) {
@@ -638,7 +542,6 @@ document.querySelectorAll('.btn-group').forEach(group => {
           multiValues[field].delete(btn.dataset.value);
         }
       } else {
-        // Single-select: clear all buttons in ALL groups for this field
         (fieldGroups[field] || [group]).forEach(g => {
           g.querySelectorAll('.btn-option').forEach(b => b.classList.remove('active'));
         });
@@ -649,27 +552,11 @@ document.querySelectorAll('.btn-group').forEach(group => {
   });
 });
 
-// ══════════════════════════════════
-//  FLAG TOGGLES
-// ══════════════════════════════════
-function toggleFlag(el) {
-  el.classList.toggle('on-warn');
-}
-function toggleFlagUsable(el) {
-  el.classList.toggle('on');
-}
-
-// ══════════════════════════════════
-//  HELPER: get multi-select value as comma string
-// ══════════════════════════════════
 function getMultiValue(field) {
   if (!multiValues[field] || multiValues[field].size === 0) return 'none';
   return Array.from(multiValues[field]).join(',');
 }
 
-// ══════════════════════════════════
-//  SUBMIT / UPDATE
-// ══════════════════════════════════
 function submitEntry() {
   const landmark = document.getElementById('landmark').value;
   const angle_label = selectedValues.angle_label;
@@ -677,7 +564,6 @@ function submitEntry() {
   const time_of_day = selectedValues.time_of_day;
   const occlusion_level = selectedValues.occlusion_level;
 
-  // Validate required
   if (!landmark || !angle_label || !distance_tier || !time_of_day || !occlusion_level) {
     showToast('⚠️ Fill: landmark, angle, distance, time of day, occlusion level', true);
     return;
@@ -686,22 +572,15 @@ function submitEntry() {
   const lm = LANDMARKS[landmark];
   const now = new Date();
   const distance_m = document.getElementById('distance_m').value || '';
-  const camera_height = selectedValues.camera_height || '';
+  const camera_pitch = selectedValues.camera_pitch || '';
   const landmark_coverage = selectedValues.landmark_coverage || '';
   const weather = selectedValues.weather || '';
-  const sun_direction = selectedValues.sun_direction || '';
-  const shadow_severity = selectedValues.shadow_severity || '';
   const occlusion_type = occlusion_level === 'none' ? 'none' : getMultiValue('occlusion_type');
   const occlusion_position = occlusion_level === 'none' ? 'none' : getMultiValue('occlusion_position');
-  const motion_blur = document.getElementById('flag_motion_blur').classList.contains('on-warn');
-  const lens_flare = document.getElementById('flag_lens_flare').classList.contains('on-warn');
-  const glare_reflection = document.getElementById('flag_glare_reflection').classList.contains('on-warn');
-  const usable = document.getElementById('flag_usable').classList.contains('on');
   const notes = document.getElementById('notes').value.trim();
   const angle_degrees = ANGLE_DEGREES[angle_label] !== undefined ? ANGLE_DEGREES[angle_label] : '';
 
   if (editingIndex >= 0) {
-    // ── UPDATE existing entry ──
     const existing = entries[editingIndex];
     existing.landmark_id = landmark;
     existing.landmark_name = lm.name;
@@ -710,28 +589,20 @@ function submitEntry() {
     existing.angle_degrees = angle_degrees;
     existing.distance_tier = distance_tier;
     existing.distance_m = distance_m;
-    existing.camera_height = camera_height;
+    existing.camera_pitch = camera_pitch;
     existing.landmark_coverage = landmark_coverage;
     existing.time_of_day = time_of_day;
     existing.weather = weather;
-    existing.sun_direction = sun_direction;
-    existing.shadow_severity = shadow_severity;
     existing.occlusion_level = occlusion_level;
     existing.occlusion_type = occlusion_type;
     existing.occlusion_position = occlusion_position;
-    existing.motion_blur = motion_blur;
-    existing.lens_flare = lens_flare;
-    existing.glare_reflection = glare_reflection;
-    existing.usable = usable;
     existing.notes = notes;
-    // Regenerate file_name
     existing.file_name = landmark + '_' + lm.cat + '_' + angle_label + '_' + distance_tier + '_' + time_of_day + '_' + (weather||'na') + '_' + occlusion_level + '_' + String(existing.image_id).padStart(4,'0') + '.jpg';
 
     localStorage.setItem('captureLog2', JSON.stringify(entries));
     showToast('✏️ Entry #' + existing.image_id + ' updated!');
     exitEditMode();
   } else {
-    // ── CREATE new entry ──
     const nextId = entries.length > 0 ? Math.max(...entries.map(e => e.image_id)) + 1 : 1;
 
     const entry = {
@@ -744,21 +615,15 @@ function submitEntry() {
       angle_degrees: angle_degrees,
       distance_tier: distance_tier,
       distance_m: distance_m,
-      camera_height: camera_height,
+      camera_pitch: camera_pitch,
       landmark_coverage: landmark_coverage,
       date: now.toLocaleDateString('en-CA'),
       time: now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}),
       time_of_day: time_of_day,
       weather: weather,
-      sun_direction: sun_direction,
-      shadow_severity: shadow_severity,
       occlusion_level: occlusion_level,
       occlusion_type: occlusion_type,
       occlusion_position: occlusion_position,
-      motion_blur: motion_blur,
-      lens_flare: lens_flare,
-      glare_reflection: glare_reflection,
-      usable: usable,
       notes: notes
     };
 
@@ -774,24 +639,18 @@ function submitEntry() {
   if (navigator.vibrate) navigator.vibrate(50);
 }
 
-// ══════════════════════════════════
-//  EDIT MODE
-// ══════════════════════════════════
 function startEdit(idx) {
   const entry = entries[idx];
   if (!entry) return;
   editingIndex = idx;
 
-  // Populate form
   document.getElementById('landmark').value = entry.landmark_id;
 
-  // Clear all selections
   document.querySelectorAll('.btn-option').forEach(b => b.classList.remove('active'));
   selectedValues = {};
   multiValues = {};
 
-  // Set single-select buttons
-  const singles = ['angle_label','distance_tier','camera_height','landmark_coverage','time_of_day','weather','sun_direction','shadow_severity','occlusion_level'];
+  const singles = ['angle_label','distance_tier','camera_pitch','landmark_coverage','time_of_day','weather','occlusion_level'];
   singles.forEach(field => {
     const val = entry[field];
     if (val) {
@@ -802,7 +661,6 @@ function startEdit(idx) {
     }
   });
 
-  // Set multi-select buttons
   ['occlusion_type','occlusion_position'].forEach(field => {
     const val = entry[field] || 'none';
     if (val && val !== 'none') {
@@ -813,28 +671,14 @@ function startEdit(idx) {
     }
   });
 
-  // Numeric / text fields
   document.getElementById('distance_m').value = entry.distance_m || '';
   document.getElementById('notes').value = entry.notes || '';
 
-  // Flags
-  const flagMotion = document.getElementById('flag_motion_blur');
-  const flagFlare = document.getElementById('flag_lens_flare');
-  const flagGlare = document.getElementById('flag_glare_reflection');
-  const flagUsable = document.getElementById('flag_usable');
-  
-  flagMotion.classList.toggle('on-warn', !!entry.motion_blur);
-  flagFlare.classList.toggle('on-warn', !!entry.lens_flare);
-  flagGlare.classList.toggle('on-warn', !!entry.glare_reflection);
-  flagUsable.classList.toggle('on', entry.usable !== false);
-
-  // UI changes
   const btn = document.getElementById('submitBtn');
   btn.textContent = '✏️ Update Entry #' + entry.image_id;
   btn.classList.add('edit-mode');
   document.getElementById('cancelBtn').classList.add('visible');
 
-  // Scroll to top
   window.scrollTo({top: 0, behavior: 'smooth'});
   showToast('✏️ Editing #' + entry.image_id + ' — change fields & tap Update');
 }
@@ -852,15 +696,11 @@ function exitEditMode() {
   document.getElementById('cancelBtn').classList.remove('visible');
 }
 
-// ══════════════════════════════════
-//  DELETE
-// ══════════════════════════════════
 function deleteEntry(idx) {
   const entry = entries[idx];
   if (!entry) return;
   if (!confirm('Delete entry #' + entry.image_id + ' (' + entry.landmark_name + ')?')) return;
   entries.splice(idx, 1);
-  // Re-index image_ids
   entries.forEach((e, i) => { e.image_id = i + 1; });
   localStorage.setItem('captureLog2', JSON.stringify(entries));
   updateCounter();
@@ -871,9 +711,6 @@ function deleteEntry(idx) {
   if (editingIndex > idx) editingIndex--;
 }
 
-// ══════════════════════════════════
-//  UI HELPERS
-// ══════════════════════════════════
 function updateCounter() {
   document.getElementById('shotCount').textContent = entries.length;
 }
@@ -897,9 +734,6 @@ function showToast(msg, isWarn) {
   setTimeout(() => t.classList.remove('show'), 2000);
 }
 
-// ══════════════════════════════════
-//  HISTORY
-// ══════════════════════════════════
 function toggleHistory() {
   const panel = document.getElementById('historyPanel');
   panel.classList.toggle('visible');
@@ -912,15 +746,9 @@ function updateHistory() {
     list.innerHTML = '<div style="color:#666;text-align:center;padding:20px;">No entries yet</div>';
     return;
   }
-  const recent = entries.slice().reverse(); // show all, newest first
+  const recent = entries.slice().reverse();
   list.innerHTML = recent.map((e, ri) => {
     const realIdx = entries.length - 1 - ri;
-    const flags = [];
-    if (e.motion_blur) flags.push('blur');
-    if (e.lens_flare) flags.push('flare');
-    if (e.glare_reflection) flags.push('glare');
-    if (e.usable === false) flags.push('⛔unusable');
-    const flagStr = flags.length ? ' | <span style="color:#ff6644">' + flags.join(', ') + '</span>' : '';
     
     return '<div class="history-item">' +
       '<div class="hi-top">' +
@@ -928,8 +756,8 @@ function updateHistory() {
           '<div class="hi-main">' + e.landmark_id + ' — ' + (e.angle_label||e.angle||'') + ' / ' + (e.distance_tier||e.distance||'') + '</div>' +
           '<div class="hi-detail">' + 
             (e.time_of_day||'') + ' | ' + (e.weather||'') + ' | occ:' + (e.occlusion_level||'') +
-            (e.camera_height ? ' | cam:'+e.camera_height : '') +
-            (e.notes ? ' | '+e.notes : '') + flagStr +
+            (e.camera_pitch ? ' | pitch:'+e.camera_pitch : '') +
+            (e.notes ? ' | '+e.notes : '') +
           '</div>' +
         '</div>' +
         '<div class="hi-num">' + e.image_id + '</div>' +
@@ -942,20 +770,16 @@ function updateHistory() {
   }).join('');
 }
 
-// ══════════════════════════════════
-//  EXPORT CSV
-// ══════════════════════════════════
 function exportCSV() {
   if (entries.length === 0) { showToast('⚠️ No entries to export', true); return; }
   
   const headers = [
     'image_id','file_name','landmark_id','landmark_name','category',
     'angle_label','angle_degrees','distance_tier','distance_m',
-    'camera_height','landmark_coverage',
+    'camera_pitch','landmark_coverage',
     'date','time','time_of_day',
-    'weather','sun_direction','shadow_severity',
+    'weather',
     'occlusion_level','occlusion_type','occlusion_position',
-    'motion_blur','lens_flare','glare_reflection','usable',
     'notes'
   ];
   const csvRows = [headers.join(',')];
@@ -984,9 +808,6 @@ function exportCSV() {
   showToast('📥 CSV exported!');
 }
 
-// ══════════════════════════════════
-//  UNDO / CLEAR
-// ══════════════════════════════════
 function undoLast() {
   if (entries.length === 0) { showToast('⚠️ Nothing to undo', true); return; }
   const removed = entries.pop();
