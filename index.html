@@ -285,6 +285,203 @@
     gap: 10px;
   }
   .inline-fields .field { flex: 1; }
+
+  /* ══════ Other Landmarks Collapsible ══════ */
+  .collapsible-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .collapsible-toggle .arrow {
+    font-size: 14px;
+    color: #00d4aa;
+    transition: transform 0.2s;
+  }
+  .collapsible-toggle.open .arrow {
+    transform: rotate(180deg);
+  }
+  .collapsible-body {
+    display: none;
+    margin-top: 10px;
+  }
+  .collapsible-body.open { display: block; }
+  .cat-label {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cat-label:first-child { margin-top: 0; }
+  .btn-group.co-vis .btn-option {
+    flex: 0 1 auto;
+    min-width: 45px;
+    padding: 7px 8px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+  .btn-group.co-vis .btn-option.active {
+    border-color: #9966ff;
+    background: #9966ff22;
+    color: #bb99ff;
+  }
+  .btn-group.co-vis .btn-option.disabled-primary {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .co-vis-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .co-vis-chips .chip {
+    background: #9966ff22;
+    border: 1px solid #9966ff55;
+    color: #bb99ff;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  /* ══════ Add Landmark Panel ══════ */
+  .add-lm-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px dashed #00d4aa55;
+    background: transparent;
+    color: #00d4aa;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .add-lm-btn:hover { background: #00d4aa11; border-color: #00d4aa; }
+  .add-lm-btn:active { transform: scale(0.97); }
+
+  .add-lm-panel {
+    display: none;
+    margin-top: 12px;
+    padding: 14px;
+    border: 1.5px solid #00d4aa44;
+    border-radius: 12px;
+    background: #0e0e22;
+  }
+  .add-lm-panel.visible { display: block; }
+  .add-lm-panel h4 {
+    font-size: 13px;
+    color: #00d4aa;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .add-lm-panel .field { margin-bottom: 10px; }
+  .add-lm-id-preview {
+    font-size: 12px;
+    color: #00d4aa;
+    background: #00d4aa15;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .add-lm-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .add-lm-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.15s;
+  }
+  .add-lm-actions button:active { transform: scale(0.96); }
+  .add-lm-actions .save-lm-btn {
+    border: none;
+    background: linear-gradient(135deg, #00d4aa, #0088ff);
+    color: #fff;
+  }
+  .add-lm-actions .cancel-lm-btn {
+    border: 1.5px solid #ff444488;
+    background: transparent;
+    color: #ff4444;
+  }
+
+  /* custom landmark chips in dropdown */
+  .custom-lm-tag {
+    font-size: 10px;
+    color: #00d4aa;
+    background: #00d4aa22;
+    padding: 1px 5px;
+    border-radius: 4px;
+    margin-left: 4px;
+    font-weight: 600;
+  }
+
+  /* ══════ Manage custom landmarks ══════ */
+  .manage-custom-section {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #1e1e3a;
+  }
+  .manage-custom-section.visible { display: block; }
+  .manage-custom-section .section-title {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .custom-lm-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background: #1a1a35;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .custom-lm-item .lm-info { color: #ccc; }
+  .custom-lm-item .lm-id { color: #00d4aa; font-weight: 700; margin-right: 6px; }
+  .custom-lm-item .lm-cat-badge {
+    font-size: 10px;
+    color: #888;
+    background: #ffffff11;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+  .custom-lm-item .delete-custom-btn {
+    background: transparent;
+    border: 1px solid #ff444466;
+    color: #ff4444;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .custom-lm-item .delete-custom-btn:active { background: #ff444422; }
 </style>
 </head>
 <body>
@@ -306,41 +503,79 @@
 <div class="form-section">
   <h3>📍 Landmark</h3>
   <div class="field">
-    <label>Landmark</label>
-    <select id="landmark">
+    <label>Primary Target</label>
+    <select id="landmark" onchange="onPrimaryLandmarkChange()">
       <option value="">— Select —</option>
-      <optgroup label="🗿 Statues">
-        <option value="LM01">LM01 — Beethoven Statue</option>
-        <option value="LM02">LM02 — Gutenberg Monument</option>
-        <option value="LM03">LM03 — Prince Eugene Statue</option>
-        <option value="LM04">LM04 — Joseph II Monument</option>
-        <option value="LM05">LM05 — Plague Column</option>
-        <option value="LM06">LM06 — Mozart Statue</option>
-        <option value="LM07">LM07 — Goethe Monument</option>
-        <option value="LM08">LM08 — Schiller Monument</option>
+      <optgroup label="🗿 Monuments / Statues / Fountains" id="optgroup-monument">
+        <option value="LM01">LM01 — Pestsäule (Plague Column)</option>
+        <option value="LM02">LM02 — Donnerbrunnen</option>
+        <option value="LM03">LM03 — Vermählungsbrunnen</option>
+        <option value="LM04">LM04 — Emperor Joseph II Statue</option>
+        <option value="LM05">LM05 — Emperor Franz I Monument</option>
+        <option value="LM06">LM06 — Archduke Charles Monument</option>
+        <option value="LM07">LM07 — Prince Eugene Monument</option>
+        <option value="LM08">LM08 — Mozart Monument</option>
+        <option value="LM09">LM09 — Austriabrunnen</option>
+        <option value="LM10">LM10 — Pallas Athene Fountain</option>
       </optgroup>
-      <optgroup label="🏛️ Buildings">
-        <option value="LM09">LM09 — St. Stephen's Cathedral</option>
-        <option value="LM10">LM10 — Hofburg Main Entrance</option>
-        <option value="LM11">LM11 — Kunsthistorisches Museum</option>
-        <option value="LM12">LM12 — Vienna State Opera</option>
-        <option value="LM13">LM13 — Austrian National Library</option>
+      <optgroup label="🏛️ Buildings / Facades / Towers" id="optgroup-building">
+        <option value="LM11">LM11 — Stephansdom</option>
+        <option value="LM12">LM12 — Haas Haus</option>
+        <option value="LM13">LM13 — Wiener Staatsoper</option>
         <option value="LM14">LM14 — Peterskirche</option>
-        <option value="LM15">LM15 — Michaelerkirche</option>
-        <option value="LM16">LM16 — Augustinerkirche</option>
-        <option value="LM17">LM17 — Albertina</option>
+        <option value="LM15">LM15 — Michaelertrakt (Hofburg)</option>
+        <option value="LM16">LM16 — Looshaus</option>
+        <option value="LM17">LM17 — Palais Kinsky</option>
+        <option value="LM18">LM18 — Ruprechtskirche</option>
+        <option value="LM19">LM19 — Zacherlhaus</option>
+        <option value="LM20">LM20 — Mozarthaus Vienna</option>
       </optgroup>
-      <optgroup label="🪧 Signs / Facades">
-        <option value="LM18">LM18 — Café Central Sign</option>
-        <option value="LM19">LM19 — Hotel Sacher Sign</option>
-        <option value="LM20">LM20 — Demel Sign</option>
-        <option value="LM21">LM21 — Kärntner Str. Sign #1</option>
-        <option value="LM22">LM22 — Kärntner Str. Sign #2</option>
-        <option value="LM23">LM23 — Graben Luxury Store Sign</option>
-        <option value="LM24">LM24 — Haas Haus Facade</option>
-        <option value="LM25">LM25 — Anker Clock</option>
+      <optgroup label="🚪 Doors / Entrances / Portals" id="optgroup-door">
+        <option value="LM21">LM21 — Riesentor (Stephansdom)</option>
+        <option value="LM22">LM22 — Schweizertor (Hofburg)</option>
+        <option value="LM23">LM23 — Michaelertor (Hofburg)</option>
+        <option value="LM24">LM24 — Main Entrance — Staatsoper</option>
+        <option value="LM25">LM25 — Entrance Portal — Peterskirche</option>
+        <option value="LM26">LM26 — Portal — Minoritenkirche</option>
+        <option value="LM27">LM27 — Entrance — Schwarzes Kameel</option>
+        <option value="LM28">LM28 — Entrance — Engel Apotheke</option>
+        <option value="LM29">LM29 — Portal — Palais Ferstel</option>
+        <option value="LM30">LM30 — Portal — Altes Rathaus</option>
       </optgroup>
     </select>
+  </div>
+
+  <!-- Add New Landmark Button -->
+  <button class="add-lm-btn" id="addLmBtn" onclick="toggleAddLandmarkPanel()">
+    ➕ Add New Landmark
+  </button>
+
+  <!-- Add Landmark Panel -->
+  <div class="add-lm-panel" id="addLmPanel">
+    <h4>➕ New Landmark</h4>
+    <div class="add-lm-id-preview" id="newLmIdPreview">Next ID: LM31</div>
+    <div class="field">
+      <label>Landmark Name</label>
+      <input type="text" id="newLmName" placeholder="e.g. Karlskirche">
+    </div>
+    <div class="field">
+      <label>Category</label>
+      <select id="newLmCategory">
+        <option value="monument">🗿 Monument / Statue / Fountain</option>
+        <option value="building">🏛️ Building / Facade / Tower</option>
+        <option value="door">🚪 Door / Entrance / Portal</option>
+      </select>
+    </div>
+    <div class="add-lm-actions">
+      <button class="cancel-lm-btn" onclick="toggleAddLandmarkPanel()">✖ Cancel</button>
+      <button class="save-lm-btn" onclick="saveNewLandmark()">✅ Save</button>
+    </div>
+  </div>
+
+  <!-- Manage custom landmarks -->
+  <div class="manage-custom-section" id="manageCustomSection">
+    <div class="section-title">Your custom landmarks</div>
+    <div id="customLmList"></div>
   </div>
 </div>
 
@@ -365,10 +600,6 @@
     <div class="btn-option" data-value="near">Near</div>
     <div class="btn-option" data-value="medium">Medium</div>
     <div class="btn-option" data-value="far">Far</div>
-  </div>
-  <div class="field" style="margin-top:10px;">
-    <label>Estimated distance (meters)</label>
-    <input type="number" id="distance_m" placeholder="e.g. 8" min="0" step="0.5">
   </div>
 </div>
 
@@ -447,6 +678,61 @@
   </div>
 </div>
 
+<!-- ═══════ OTHER LANDMARKS VISIBLE ═══════ -->
+<div class="form-section">
+  <div class="collapsible-toggle" id="coVisToggle" onclick="toggleCoVis()">
+    <h3 style="margin-bottom:0;">👀 Other Landmarks Visible <span style="font-size:10px;color:#888;text-transform:none;letter-spacing:0;">(optional)</span></h3>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="co-vis-chips" id="coVisChips"></div>
+  <div class="collapsible-body" id="coVisBody">
+    <div class="cat-label">🗿 Monuments / Statues / Fountains</div>
+    <div class="btn-group co-vis multi" data-field="other_landmarks" data-multi="true" id="coVis-monument">
+      <div class="btn-option" data-value="LM01">01</div>
+      <div class="btn-option" data-value="LM02">02</div>
+      <div class="btn-option" data-value="LM03">03</div>
+      <div class="btn-option" data-value="LM04">04</div>
+      <div class="btn-option" data-value="LM05">05</div>
+      <div class="btn-option" data-value="LM06">06</div>
+      <div class="btn-option" data-value="LM07">07</div>
+      <div class="btn-option" data-value="LM08">08</div>
+      <div class="btn-option" data-value="LM09">09</div>
+      <div class="btn-option" data-value="LM10">10</div>
+    </div>
+    <div class="cat-label">🏛️ Buildings / Facades / Towers</div>
+    <div class="btn-group co-vis multi" data-field="other_landmarks" data-multi="true" id="coVis-building">
+      <div class="btn-option" data-value="LM11">11</div>
+      <div class="btn-option" data-value="LM12">12</div>
+      <div class="btn-option" data-value="LM13">13</div>
+      <div class="btn-option" data-value="LM14">14</div>
+      <div class="btn-option" data-value="LM15">15</div>
+      <div class="btn-option" data-value="LM16">16</div>
+      <div class="btn-option" data-value="LM17">17</div>
+      <div class="btn-option" data-value="LM18">18</div>
+      <div class="btn-option" data-value="LM19">19</div>
+      <div class="btn-option" data-value="LM20">20</div>
+    </div>
+    <div class="cat-label">🚪 Doors / Entrances / Portals</div>
+    <div class="btn-group co-vis multi" data-field="other_landmarks" data-multi="true" id="coVis-door">
+      <div class="btn-option" data-value="LM21">21</div>
+      <div class="btn-option" data-value="LM22">22</div>
+      <div class="btn-option" data-value="LM23">23</div>
+      <div class="btn-option" data-value="LM24">24</div>
+      <div class="btn-option" data-value="LM25">25</div>
+      <div class="btn-option" data-value="LM26">26</div>
+      <div class="btn-option" data-value="LM27">27</div>
+      <div class="btn-option" data-value="LM28">28</div>
+      <div class="btn-option" data-value="LM29">29</div>
+      <div class="btn-option" data-value="LM30">30</div>
+    </div>
+    <!-- Custom co-vis entries injected here dynamically -->
+    <div id="coVisCustomContainer"></div>
+    <div style="font-size:11px;color:#555;margin-top:8px;">
+      Tap numbers to mark which other landmarks from your list appear in this shot. The primary target is auto-excluded.
+    </div>
+  </div>
+</div>
+
 <!-- ═══════ NOTES ═══════ -->
 <div class="form-section">
   <h3>📝 Notes (optional)</h3>
@@ -483,32 +769,40 @@
 
 <script>
 const LANDMARKS = {
-  LM01:{name:"Beethoven Statue",cat:"statue"},
-  LM02:{name:"Gutenberg Monument",cat:"statue"},
-  LM03:{name:"Prince Eugene Statue",cat:"statue"},
-  LM04:{name:"Joseph II Monument",cat:"statue"},
-  LM05:{name:"Plague Column",cat:"statue"},
-  LM06:{name:"Mozart Statue",cat:"statue"},
-  LM07:{name:"Goethe Monument",cat:"statue"},
-  LM08:{name:"Schiller Monument",cat:"statue"},
-  LM09:{name:"St. Stephen's Cathedral",cat:"building"},
-  LM10:{name:"Hofburg Main Entrance",cat:"building"},
-  LM11:{name:"Kunsthistorisches Museum",cat:"building"},
-  LM12:{name:"Vienna State Opera",cat:"building"},
-  LM13:{name:"Austrian National Library",cat:"building"},
+  LM01:{name:"Pestsäule (Plague Column)",cat:"monument"},
+  LM02:{name:"Donnerbrunnen",cat:"monument"},
+  LM03:{name:"Vermählungsbrunnen",cat:"monument"},
+  LM04:{name:"Emperor Joseph II Statue",cat:"monument"},
+  LM05:{name:"Emperor Franz I Monument",cat:"monument"},
+  LM06:{name:"Archduke Charles Monument",cat:"monument"},
+  LM07:{name:"Prince Eugene Monument",cat:"monument"},
+  LM08:{name:"Mozart Monument",cat:"monument"},
+  LM09:{name:"Austriabrunnen",cat:"monument"},
+  LM10:{name:"Pallas Athene Fountain",cat:"monument"},
+  LM11:{name:"Stephansdom",cat:"building"},
+  LM12:{name:"Haas Haus",cat:"building"},
+  LM13:{name:"Wiener Staatsoper",cat:"building"},
   LM14:{name:"Peterskirche",cat:"building"},
-  LM15:{name:"Michaelerkirche",cat:"building"},
-  LM16:{name:"Augustinerkirche",cat:"building"},
-  LM17:{name:"Albertina",cat:"building"},
-  LM18:{name:"Café Central Sign",cat:"sign"},
-  LM19:{name:"Hotel Sacher Sign",cat:"sign"},
-  LM20:{name:"Demel Sign",cat:"sign"},
-  LM21:{name:"Kärntner Str. Sign #1",cat:"sign"},
-  LM22:{name:"Kärntner Str. Sign #2",cat:"sign"},
-  LM23:{name:"Graben Luxury Store Sign",cat:"sign"},
-  LM24:{name:"Haas Haus Facade",cat:"sign"},
-  LM25:{name:"Anker Clock",cat:"sign"},
+  LM15:{name:"Michaelertrakt (Hofburg)",cat:"building"},
+  LM16:{name:"Looshaus",cat:"building"},
+  LM17:{name:"Palais Kinsky",cat:"building"},
+  LM18:{name:"Ruprechtskirche",cat:"building"},
+  LM19:{name:"Zacherlhaus",cat:"building"},
+  LM20:{name:"Mozarthaus Vienna",cat:"building"},
+  LM21:{name:"Riesentor (Stephansdom)",cat:"door"},
+  LM22:{name:"Schweizertor (Hofburg)",cat:"door"},
+  LM23:{name:"Michaelertor (Hofburg)",cat:"door"},
+  LM24:{name:"Main Entrance — Staatsoper",cat:"door"},
+  LM25:{name:"Entrance Portal — Peterskirche",cat:"door"},
+  LM26:{name:"Portal — Minoritenkirche",cat:"door"},
+  LM27:{name:"Entrance — Schwarzes Kameel",cat:"door"},
+  LM28:{name:"Entrance — Engel Apotheke",cat:"door"},
+  LM29:{name:"Portal — Palais Ferstel",cat:"door"},
+  LM30:{name:"Portal — Altes Rathaus",cat:"door"},
 };
+
+const CAT_ICONS = { monument: '🗿', building: '🏛️', door: '🚪' };
+const CAT_LABELS = { monument: 'Monuments / Statues / Fountains', building: 'Buildings / Facades / Towers', door: 'Doors / Entrances / Portals' };
 
 const ANGLE_DEGREES = {
   front:0, front_45L:45, front_45R:45,
@@ -517,15 +811,201 @@ const ANGLE_DEGREES = {
 };
 
 let entries = JSON.parse(localStorage.getItem('captureLog2') || '[]');
+let customLandmarks = JSON.parse(localStorage.getItem('customLandmarks') || '[]');
 let selectedValues = {};
 let multiValues = {};
 let editingIndex = -1;
 
+// ══════ Load custom landmarks on startup ══════
+loadCustomLandmarks();
 updateCounter();
 showLastEntry();
 
+function getNextLandmarkId() {
+  const allIds = Object.keys(LANDMARKS).map(k => parseInt(k.replace('LM',''))).filter(n => !isNaN(n));
+  return 'LM' + String(Math.max(...allIds, 0) + 1).padStart(2, '0');
+}
+
+function updateNewLmIdPreview() {
+  const nextId = getNextLandmarkId();
+  document.getElementById('newLmIdPreview').textContent = 'Next ID: ' + nextId;
+}
+
+function toggleAddLandmarkPanel() {
+  const panel = document.getElementById('addLmPanel');
+  panel.classList.toggle('visible');
+  if (panel.classList.contains('visible')) {
+    updateNewLmIdPreview();
+    document.getElementById('newLmName').value = '';
+    document.getElementById('newLmName').focus();
+  }
+}
+
+function saveNewLandmark() {
+  const name = document.getElementById('newLmName').value.trim();
+  const cat = document.getElementById('newLmCategory').value;
+  if (!name) {
+    showToast('⚠️ Please enter a landmark name', true);
+    return;
+  }
+  const id = getNextLandmarkId();
+
+  // Add to LANDMARKS object
+  LANDMARKS[id] = { name: name, cat: cat };
+
+  // Save to custom list
+  customLandmarks.push({ id: id, name: name, cat: cat });
+  localStorage.setItem('customLandmarks', JSON.stringify(customLandmarks));
+
+  // Add to the dropdown
+  addLandmarkToDropdown(id, name, cat);
+
+  // Add to co-vis section
+  addLandmarkToCoVis(id, cat);
+
+  // Update manage list
+  renderCustomLmList();
+
+  // Close panel
+  toggleAddLandmarkPanel();
+  
+  // Auto-select the new landmark
+  document.getElementById('landmark').value = id;
+  onPrimaryLandmarkChange();
+
+  showToast('✅ ' + id + ' — ' + name + ' added!');
+}
+
+function addLandmarkToDropdown(id, name, cat) {
+  const optgroupId = 'optgroup-' + cat;
+  let optgroup = document.getElementById(optgroupId);
+  
+  // If optgroup doesn't exist (shouldn't happen but safety), create it
+  if (!optgroup) {
+    optgroup = document.createElement('optgroup');
+    optgroup.id = optgroupId;
+    optgroup.label = CAT_ICONS[cat] + ' ' + CAT_LABELS[cat];
+    document.getElementById('landmark').appendChild(optgroup);
+  }
+
+  const option = document.createElement('option');
+  option.value = id;
+  option.textContent = id + ' — ' + name + ' ★';
+  optgroup.appendChild(option);
+}
+
+function addLandmarkToCoVis(id, cat) {
+  const num = id.replace('LM','');
+  const containerId = 'coVis-' + cat;
+  let container = document.getElementById(containerId);
+
+  // If no container for this category in co-vis, create one in the custom container
+  if (!container) {
+    const customContainer = document.getElementById('coVisCustomContainer');
+    const label = document.createElement('div');
+    label.className = 'cat-label';
+    label.textContent = CAT_ICONS[cat] + ' ' + CAT_LABELS[cat] + ' (Custom)';
+    customContainer.appendChild(label);
+
+    container = document.createElement('div');
+    container.className = 'btn-group co-vis multi';
+    container.id = containerId;
+    container.dataset.field = 'other_landmarks';
+    container.dataset.multi = 'true';
+    customContainer.appendChild(container);
+  }
+
+  const btn = document.createElement('div');
+  btn.className = 'btn-option';
+  btn.dataset.value = id;
+  btn.textContent = num;
+  btn.addEventListener('click', function() {
+    if (this.classList.contains('disabled-primary')) return;
+    this.classList.toggle('active');
+    if (this.classList.contains('active')) {
+      multiValues['other_landmarks'].add(this.dataset.value);
+    } else {
+      multiValues['other_landmarks'].delete(this.dataset.value);
+    }
+    updateCoVisChips();
+  });
+  container.appendChild(btn);
+
+  // Refresh the coVisGroups reference
+  refreshCoVisGroups();
+}
+
+function refreshCoVisGroups() {
+  // Re-query all co-vis groups so future operations pick up new buttons
+  window._coVisGroups = document.querySelectorAll('.btn-group.co-vis');
+}
+
+function loadCustomLandmarks() {
+  customLandmarks.forEach(cl => {
+    LANDMARKS[cl.id] = { name: cl.name, cat: cl.cat };
+    addLandmarkToDropdown(cl.id, cl.name, cl.cat);
+    addLandmarkToCoVis(cl.id, cl.cat);
+  });
+  renderCustomLmList();
+}
+
+function renderCustomLmList() {
+  const section = document.getElementById('manageCustomSection');
+  const list = document.getElementById('customLmList');
+  if (customLandmarks.length === 0) {
+    section.classList.remove('visible');
+    return;
+  }
+  section.classList.add('visible');
+  list.innerHTML = customLandmarks.map((cl, i) => 
+    '<div class="custom-lm-item">' +
+      '<div class="lm-info"><span class="lm-id">' + cl.id + '</span>' + cl.name + 
+      '<span class="lm-cat-badge">' + CAT_ICONS[cl.cat] + ' ' + cl.cat + '</span></div>' +
+      '<button class="delete-custom-btn" onclick="deleteCustomLandmark('+i+')">✖</button>' +
+    '</div>'
+  ).join('');
+}
+
+function deleteCustomLandmark(idx) {
+  const cl = customLandmarks[idx];
+  if (!cl) return;
+  if (!confirm('Remove custom landmark ' + cl.id + ' — ' + cl.name + '?')) return;
+
+  // Check if it's used in any entries
+  const usedInEntries = entries.some(e => e.landmark_id === cl.id);
+  if (usedInEntries) {
+    showToast('⚠️ Cannot delete — used in logged entries', true);
+    return;
+  }
+
+  // Remove from LANDMARKS
+  delete LANDMARKS[cl.id];
+
+  // Remove from dropdown
+  const select = document.getElementById('landmark');
+  const option = select.querySelector('option[value="'+cl.id+'"]');
+  if (option) option.remove();
+
+  // Remove from co-vis
+  document.querySelectorAll('.btn-group.co-vis .btn-option[data-value="'+cl.id+'"]').forEach(b => b.remove());
+  multiValues['other_landmarks'].delete(cl.id);
+  updateCoVisChips();
+  refreshCoVisGroups();
+
+  // Remove from array & save
+  customLandmarks.splice(idx, 1);
+  localStorage.setItem('customLandmarks', JSON.stringify(customLandmarks));
+  renderCustomLmList();
+
+  // Reset dropdown if this was selected
+  if (select.value === cl.id) select.value = '';
+
+  showToast('🗑️ ' + cl.id + ' removed');
+}
+
+/* ══════ Standard button groups ══════ */
 const fieldGroups = {};
-document.querySelectorAll('.btn-group').forEach(group => {
+document.querySelectorAll('.btn-group:not(.co-vis)').forEach(group => {
   const field = group.dataset.field;
   const isMulti = group.dataset.multi === 'true';
   if (!fieldGroups[field]) fieldGroups[field] = [];
@@ -552,9 +1032,71 @@ document.querySelectorAll('.btn-group').forEach(group => {
   });
 });
 
+/* ══════ Co-visible landmarks (special multi-select) ══════ */
+if (!multiValues['other_landmarks']) multiValues['other_landmarks'] = new Set();
+
+// Initial binding for built-in co-vis buttons
+document.querySelectorAll('.btn-group.co-vis .btn-option').forEach(btn => {
+  // Only bind if not already bound (custom ones get bound in addLandmarkToCoVis)
+  if (!btn._coVisBound) {
+    btn._coVisBound = true;
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('disabled-primary')) return;
+      btn.classList.toggle('active');
+      if (btn.classList.contains('active')) {
+        multiValues['other_landmarks'].add(btn.dataset.value);
+      } else {
+        multiValues['other_landmarks'].delete(btn.dataset.value);
+      }
+      updateCoVisChips();
+    });
+  }
+});
+
+refreshCoVisGroups();
+
+function getCoVisGroups() {
+  return window._coVisGroups || document.querySelectorAll('.btn-group.co-vis');
+}
+
+function onPrimaryLandmarkChange() {
+  const primary = document.getElementById('landmark').value;
+  getCoVisGroups().forEach(group => {
+    group.querySelectorAll('.btn-option').forEach(btn => {
+      if (btn.dataset.value === primary) {
+        btn.classList.add('disabled-primary');
+        btn.classList.remove('active');
+        multiValues['other_landmarks'].delete(btn.dataset.value);
+      } else {
+        btn.classList.remove('disabled-primary');
+      }
+    });
+  });
+  updateCoVisChips();
+}
+
+function toggleCoVis() {
+  const toggle = document.getElementById('coVisToggle');
+  const body = document.getElementById('coVisBody');
+  toggle.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function updateCoVisChips() {
+  const container = document.getElementById('coVisChips');
+  const selected = multiValues['other_landmarks'];
+  if (!selected || selected.size === 0) {
+    container.innerHTML = '';
+    return;
+  }
+  container.innerHTML = Array.from(selected).sort().map(id => {
+    return '<span class="chip">' + id + '</span>';
+  }).join('');
+}
+
 function getMultiValue(field) {
   if (!multiValues[field] || multiValues[field].size === 0) return 'none';
-  return Array.from(multiValues[field]).join(',');
+  return Array.from(multiValues[field]).sort().join(',');
 }
 
 function submitEntry() {
@@ -571,12 +1113,12 @@ function submitEntry() {
 
   const lm = LANDMARKS[landmark];
   const now = new Date();
-  const distance_m = document.getElementById('distance_m').value || '';
   const camera_pitch = selectedValues.camera_pitch || '';
   const landmark_coverage = selectedValues.landmark_coverage || '';
   const weather = selectedValues.weather || '';
   const occlusion_type = occlusion_level === 'none' ? 'none' : getMultiValue('occlusion_type');
   const occlusion_position = occlusion_level === 'none' ? 'none' : getMultiValue('occlusion_position');
+  const other_landmarks_visible = getMultiValue('other_landmarks');
   const notes = document.getElementById('notes').value.trim();
   const angle_degrees = ANGLE_DEGREES[angle_label] !== undefined ? ANGLE_DEGREES[angle_label] : '';
 
@@ -588,7 +1130,6 @@ function submitEntry() {
     existing.angle_label = angle_label;
     existing.angle_degrees = angle_degrees;
     existing.distance_tier = distance_tier;
-    existing.distance_m = distance_m;
     existing.camera_pitch = camera_pitch;
     existing.landmark_coverage = landmark_coverage;
     existing.time_of_day = time_of_day;
@@ -596,6 +1137,7 @@ function submitEntry() {
     existing.occlusion_level = occlusion_level;
     existing.occlusion_type = occlusion_type;
     existing.occlusion_position = occlusion_position;
+    existing.other_landmarks_visible = other_landmarks_visible;
     existing.notes = notes;
     existing.file_name = landmark + '_' + lm.cat + '_' + angle_label + '_' + distance_tier + '_' + time_of_day + '_' + (weather||'na') + '_' + occlusion_level + '_' + String(existing.image_id).padStart(4,'0') + '.jpg';
 
@@ -614,7 +1156,6 @@ function submitEntry() {
       angle_label: angle_label,
       angle_degrees: angle_degrees,
       distance_tier: distance_tier,
-      distance_m: distance_m,
       camera_pitch: camera_pitch,
       landmark_coverage: landmark_coverage,
       date: now.toLocaleDateString('en-CA'),
@@ -624,6 +1165,7 @@ function submitEntry() {
       occlusion_level: occlusion_level,
       occlusion_type: occlusion_type,
       occlusion_position: occlusion_position,
+      other_landmarks_visible: other_landmarks_visible,
       notes: notes
     };
 
@@ -632,6 +1174,11 @@ function submitEntry() {
     document.getElementById('notes').value = '';
     showToast('✅ #' + entry.image_id + ' logged!');
   }
+
+  // Clear co-vis selections after submit
+  multiValues['other_landmarks'] = new Set();
+  getCoVisGroups().forEach(g => g.querySelectorAll('.btn-option').forEach(b => b.classList.remove('active')));
+  updateCoVisChips();
 
   updateCounter();
   showLastEntry();
@@ -645,10 +1192,11 @@ function startEdit(idx) {
   editingIndex = idx;
 
   document.getElementById('landmark').value = entry.landmark_id;
+  onPrimaryLandmarkChange();
 
-  document.querySelectorAll('.btn-option').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.btn-group:not(.co-vis) .btn-option').forEach(b => b.classList.remove('active'));
   selectedValues = {};
-  multiValues = {};
+  multiValues = { other_landmarks: new Set() };
 
   const singles = ['angle_label','distance_tier','camera_pitch','landmark_coverage','time_of_day','weather','occlusion_level'];
   singles.forEach(field => {
@@ -665,13 +1213,28 @@ function startEdit(idx) {
     const val = entry[field] || 'none';
     if (val && val !== 'none') {
       multiValues[field] = new Set(val.split(','));
-      document.querySelectorAll('[data-field="'+field+'"] .btn-option').forEach(btn => {
+      document.querySelectorAll('.btn-group:not(.co-vis)[data-field="'+field+'"] .btn-option').forEach(btn => {
         if (multiValues[field].has(btn.dataset.value)) btn.classList.add('active');
       });
     }
   });
 
-  document.getElementById('distance_m').value = entry.distance_m || '';
+  // Restore co-vis selections
+  getCoVisGroups().forEach(g => g.querySelectorAll('.btn-option').forEach(b => b.classList.remove('active')));
+  const coVisVal = entry.other_landmarks_visible || 'none';
+  if (coVisVal && coVisVal !== 'none') {
+    const ids = coVisVal.split(',');
+    multiValues['other_landmarks'] = new Set(ids);
+    getCoVisGroups().forEach(g => {
+      g.querySelectorAll('.btn-option').forEach(btn => {
+        if (ids.includes(btn.dataset.value) && !btn.classList.contains('disabled-primary')) {
+          btn.classList.add('active');
+        }
+      });
+    });
+  }
+  updateCoVisChips();
+
   document.getElementById('notes').value = entry.notes || '';
 
   const btn = document.getElementById('submitBtn');
@@ -749,6 +1312,7 @@ function updateHistory() {
   const recent = entries.slice().reverse();
   list.innerHTML = recent.map((e, ri) => {
     const realIdx = entries.length - 1 - ri;
+    const coVis = (e.other_landmarks_visible && e.other_landmarks_visible !== 'none') ? ' | co:'+e.other_landmarks_visible : '';
     
     return '<div class="history-item">' +
       '<div class="hi-top">' +
@@ -757,6 +1321,7 @@ function updateHistory() {
           '<div class="hi-detail">' + 
             (e.time_of_day||'') + ' | ' + (e.weather||'') + ' | occ:' + (e.occlusion_level||'') +
             (e.camera_pitch ? ' | pitch:'+e.camera_pitch : '') +
+            coVis +
             (e.notes ? ' | '+e.notes : '') +
           '</div>' +
         '</div>' +
@@ -775,11 +1340,12 @@ function exportCSV() {
   
   const headers = [
     'image_id','file_name','landmark_id','landmark_name','category',
-    'angle_label','angle_degrees','distance_tier','distance_m',
+    'angle_label','angle_degrees','distance_tier',
     'camera_pitch','landmark_coverage',
     'date','time','time_of_day',
     'weather',
     'occlusion_level','occlusion_type','occlusion_position',
+    'other_landmarks_visible',
     'notes'
   ];
   const csvRows = [headers.join(',')];
